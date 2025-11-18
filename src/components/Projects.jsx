@@ -29,7 +29,7 @@ const projects = [
     image: "/wanderlust.png",
     tech: ["HTML", "CSS", "Node.js", "Express", "MongoDB"],
     demo: "https://wanderlust-app-demo.vercel.app",
-    github: "https://github.com/bhupendrapatil123/Wanderlust-Project",
+    github: "https://wanderlust-hub.vercel.app/listings",
   },
 ];
 
