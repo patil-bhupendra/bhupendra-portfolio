@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGithub, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaInstagram, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
@@ -112,7 +112,7 @@ const Contact = () => {
                 <a
                   href="https://www.linkedin.com/in/patil-bhupendra"
                   target="_blank"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-blue-400 hover:bg-black hover:text-white transition"
+                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-white hover:bg-black hover:text-white transition"
                 >
                   <FaLinkedin />
                 </a>
@@ -123,6 +123,14 @@ const Contact = () => {
                   className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-white hover:bg-black hover:text-white transition"
                 >
                   <FaXTwitter />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/_.bhupendra.rajput._/"
+                  target="_blank"
+                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-white hover:bg-black hover:text-white transition"
+                >
+                  <FaInstagram />
                 </a>
               </div>
             </div>
