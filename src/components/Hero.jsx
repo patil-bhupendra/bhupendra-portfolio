@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { assets } from "../assets/assets";
 import StarfieldCanvas from "./StarfieldCanvas";
@@ -14,6 +14,42 @@ const Hero = () => {
     y: [0, -15, 0],
     transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
   };
+
+  /* ---------------------- TYPING EFFECT ---------------------- */
+  const role = "Full Stack Developer";
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const speed = isDeleting ? 50 : 80;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // typing
+        if (index < role.length) {
+          setText(role.substring(0, index + 1));
+          setIndex(index + 1);
+        } else {
+          // pause before delete
+          setTimeout(() => setIsDeleting(true), 1000);
+        }
+      } else {
+        // deleting
+        if (index > 0) {
+          setText(role.substring(0, index - 1));
+          setIndex(index - 1);
+        } else {
+          // restart after delete
+          setIsDeleting(false);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timeout);
+  }, [index, isDeleting]);
+
+  /* ------------------------------------------------------------ */
 
   return (
     <section
@@ -48,8 +84,10 @@ const Hero = () => {
             Hi, I'm <span className="text-purple">Bhupendra Patil</span>
           </h1>
 
-          <h2 className="text-2xl md:text-4xl font-semibold text-purple mb-6">
-            Full Stack Developer
+          {/* ⭐ TYPING EFFECT WITH WHITE COLOR ⭐ */}
+          <h2 className="text-2xl md:text-4xl font-semibold text-white mb-6 h-12">
+            {text}
+            <span className="border-r-2 border-white ml-1 animate-pulse"></span>
           </h2>
 
           <p className="text-lg text-gray-300 mb-8 max-w-md">
@@ -74,8 +112,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/*     PREMIUM RIGHT IMAGE    */}
-
+        {/* RIGHT IMAGE */}
         <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
           <div className="relative w-72 h-80 md:w-96 md:h-[420px] group">
             {/* Outer glow */}
@@ -108,7 +145,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/*         END IMAGE          */}
+        {/* END IMAGE */}
       </div>
     </section>
   );
