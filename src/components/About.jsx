@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { FaUserTie, FaLaptopCode, FaCode, FaLightbulb } from "react-icons/fa";
+import { FaLaptopCode, FaCode, FaLightbulb } from "react-icons/fa";
 import { assets } from "../assets/assets";
 
-// About info data
 const aboutInfo = [
-  {
-    icon: FaUserTie,
-    title: "Professional",
-    description: "I have over 5 years of experience building web apps.",
-  },
   {
     icon: FaLaptopCode,
     title: "Full-Stack Developer",
@@ -18,7 +11,7 @@ const aboutInfo = [
   {
     icon: FaCode,
     title: "Clean Code",
-    description: "I write scalable and maintainable code.",
+    description: "I write scalable and maintainable code with best practices.",
   },
   {
     icon: FaLightbulb,
@@ -27,216 +20,97 @@ const aboutInfo = [
   },
 ];
 
-// Animation variants
-const cardContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.2 } },
-};
-const cardItem = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } };
-
-// Floating orb animation
-const orbAnimation = {
-  y: [0, -20, 10, 0],
-  x: [0, 10, -10, 0],
-  rotate: [0, 15, -15, 0],
-  scale: [1, 1.05, 0.95, 1],
-  background: [
-    "linear-gradient(135deg, #8b5cf6, #c084fc)",
-    "linear-gradient(135deg, #c084fc, #8b5cf6)",
-    "linear-gradient(135deg, #8b5cf6, #a78bfa)",
-    "linear-gradient(135deg, #a78bfa, #8b5cf6)",
-  ],
-  transition: { duration: 12, repeat: Infinity, ease: "easeInOut" },
-};
-
-// Generate lightweight particles
-const generateParticles = (count = 30) =>
-  Array.from({ length: count }).map(() => ({
-    size: Math.random() * 3 + 2, // 2–5px
-    top: Math.random() * 100 + "%",
-    left: Math.random() * 100 + "%",
-    delay: Math.random() * 5,
-  }));
-
 const About = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [particles] = useState(generateParticles());
 
   const handleMouseMove = (e) => {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
     setMousePos({
-      x: (e.clientX - centerX) / 50,
-      y: (e.clientY - centerY) / 50,
+      x: (e.clientX - centerX) / 120,
+      y: (e.clientY - centerY) / 120,
     });
   };
 
   const orbs = [
-    { size: "w-40 h-40", top: "top-10", left: "left-10", depth: 1.5 },
-    { size: "w-32 h-32", top: "top-60", left: "right-20", depth: 1 },
-    { size: "w-48 h-48", top: "bottom-20", left: "left-1/3", depth: 0.6 },
+    { size: "w-44 h-44", top: "top-10", left: "left-10", bg: "bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-400 opacity-25" },
+    { size: "w-32 h-32", top: "top-60", left: "right-20", bg: "bg-gradient-to-br from-purple-500 via-indigo-500 to-pink-500 opacity-20" },
+    { size: "w-52 h-52", top: "bottom-20", left: "left-1/3", bg: "bg-gradient-to-tl from-indigo-600 via-purple-500 to-pink-400 opacity-15" },
   ];
 
   return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true }}
+    <section
       id="about"
-      className="relative py-20 bg-dark-200 overflow-hidden"
+      onMouseMove={handleMouseMove}
+      className="relative py-28 bg-gradient-to-b from-dark-200 to-dark-300 overflow-hidden"
     >
-      {/* Orb + particle layer */}
-      <motion.div
-        style={{ perspective: 1000 }}
-        animate={{
-          rotateY: mousePos.x * 0.5,
-          rotateX: -mousePos.y * 0.5,
-          transition: { type: "spring", stiffness: 50, damping: 20 },
-        }}
-        className="absolute inset-0"
-      >
-        {/* Floating orbs */}
+      {/* Background Orbs */}
+      <div className="absolute inset-0">
         {orbs.map((orb, i) => (
-          <motion.div
+          <div
             key={i}
-            className={`${orb.size} absolute rounded-full ${orb.top} ${orb.left}`}
-            animate={orbAnimation}
+            className={`absolute ${orb.size} ${orb.top} ${orb.left} ${orb.bg} rounded-full blur-3xl`}
             style={{
-              zIndex: 0,
-              filter: "blur(25px)",
-              opacity: 0.4,
-              transform: `translate(${mousePos.x * orb.depth}px, ${
-                mousePos.y * orb.depth
-              }px)`,
+              transform: `translate(${mousePos.x * 10}px, ${mousePos.y * 10}px)`,
             }}
           />
         ))}
+      </div>
 
-        {/* Particle sparks */}
-        {particles.map((p, i) => (
-          <motion.div
-            key={i}
-            className="absolute bg-white rounded-full opacity-60"
-            style={{
-              width: `${p.size}px`,
-              height: `${p.size}px`,
-              top: p.top,
-              left: p.left,
-              zIndex: 0,
-              filter: "blur(1px)",
-            }}
-            animate={{
-              y: ["0%", "-10%", "0%"],
-              x: ["0%", "5%", "-5%", "0%"],
-              opacity: [0.6, 0.9, 0.6],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 4,
-              repeat: Infinity,
-              repeatType: "mirror",
-              delay: p.delay,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </motion.div>
-
-      {/* Content */}
+      {/* Main Content */}
       <div className="container mx-auto px-6 relative z-20">
-        <h2 className="text-3xl font-bold text-center mb-4">
-          About <span className="text-purple">Me</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-white tracking-wide">
+          About <span className="text-purple-400">Me</span>
         </h2>
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          Get to know more about my background and passion
+        <p className="text-gray-400 text-center max-w-3xl mx-auto mb-24 text-lg md:text-xl">
+          Discover my journey as a developer, my expertise, and how I craft premium web applications with elegance and performance in mind.
         </p>
 
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Profile image */}
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            whileHover={{ scale: 1.05, y: -5 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="md:w-1/2 relative rounded-2xl overflow-hidden shadow-xl cursor-pointer"
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-purple-700 via-transparent to-transparent opacity-30 z-10 rounded-2xl" />
+        <div className="flex flex-col md:flex-row items-center gap-20">
+          {/* Profile Image */}
+          <div className="md:w-1/2 relative rounded-3xl overflow-hidden shadow-2xl">
+            {/* Gradient Glow */}
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-400 opacity-30 blur-3xl z-0" />
+            {/* Soft Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-purple-700 via-transparent to-transparent opacity-25 rounded-3xl z-10" />
+            {/* Static Profile */}
             <img
               src={assets.profileImg}
               alt="Profile"
-              className="w-full h-full object-cover rounded-2xl relative z-20"
+              className="relative z-20 w-full h-full object-cover rounded-3xl shadow-inner border border-purple-500/20"
             />
-          </motion.div>
+          </div>
 
           {/* Text + Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="md:w-1/2"
-          >
-            <div className="rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold mb-6">My Journey</h3>
-              <p className="text-gray-300 mb-6">
-                I am a passionate full-stack developer, creating innovative
-                digital solutions for businesses worldwide.
+          <div className="md:w-1/2">
+            <div className="rounded-3xl p-10 bg-dark-400/70 backdrop-blur-md shadow-2xl border border-purple-500/10">
+              <p className="text-gray-200 mb-6 text-lg leading-relaxed">
+                I'm Bhupendra Patil, a full-stack developer dedicated to building high-quality, interactive web experiences. I focus on clean, maintainable code and enjoy tackling challenging problems with innovative solutions.
               </p>
-              <p className="text-gray-300 mb-12">
-                When I'm not coding, I explore new technologies, contribute to
-                open-source, and write tech blogs.
+              <p className="text-gray-300 mb-12 text-lg leading-relaxed">
+                Beyond coding, I constantly explore new technologies, experiment with creative projects, and aim to elevate my craft. My goal is to deliver solutions that are both functional and visually captivating.
               </p>
 
               {/* Cards */}
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                variants={cardContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
-              >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {aboutInfo.map((data, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    variants={cardItem}
-                    whileHover={{
-                      y: -8,
-                      scale: 1.05,
-                      boxShadow:
-                        "0 0 25px rgba(139,92,246,0.6), 0 0 50px rgba(139,92,246,0.3)",
-                    }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="bg-dark-300 rounded-2xl p-6 cursor-pointer"
+                    className="bg-dark-300 rounded-2xl p-6 cursor-pointer border border-purple-400/20 shadow-lg hover:shadow-[0_0_25px_rgba(139,92,246,0.5)] transform hover:-translate-y-1 transition-all duration-300"
                   >
-                    <motion.div
-                      whileHover={{
-                        scale: 1.2,
-                        rotate: 10,
-                        textShadow:
-                          "0 0 10px rgba(139,92,246,0.8), 0 0 20px rgba(139,92,246,0.5)",
-                      }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 15,
-                      }}
-                      className="text-purple text-4xl mb-4"
-                    >
+                    <div className="text-white text-4xl mb-4 drop-shadow-[0_0_8px_rgba(139,92,246,0.7)]">
                       <data.icon />
-                    </motion.div>
-
-                    <h3 className="text-xl font-semibold mb-3">{data.title}</h3>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white">{data.title}</h3>
                     <p className="text-gray-400">{data.description}</p>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </section>
   );
 };
 
