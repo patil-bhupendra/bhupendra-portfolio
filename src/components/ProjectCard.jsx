@@ -11,7 +11,7 @@ const ProjectCard = ({ title, description, image, tech, demo, github }) => {
       <img
         src={image}
         alt={title}
-        loading="lazy"
+        loading="lazy" 
         className="w-full h-56 object-cover"
       />
 
