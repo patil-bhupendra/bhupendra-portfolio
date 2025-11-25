@@ -14,7 +14,7 @@ const skills = [
     title: "Frontend Development",
     description:
       "Building responsive and interactive user interfaces with modern frameworks.",
-    tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "React.js", "Redux"],
+    tags: ["React", "JavaScript", "HTML", "CSS"],
   },
   {
     icon: FaServer,
@@ -89,11 +89,13 @@ const Skills = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.03 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{ y: -6, scale: 1.01 }}
+              transition={{ duration: 0.25 }}
+              style={{ transform: "translateZ(0)" }}
               className="
-                backdrop-blur-xl bg-dark-300/40 
-                border border-white/10 
+                will-change-transform
+                backdrop-blur-md bg-dark-300/40
+                border border-white/10
                 shadow-lg rounded-2xl p-6
                 hover:shadow-purple/30 hover:border-purple/30
                 transition-all duration-300 cursor-pointer
@@ -120,7 +122,7 @@ const Skills = () => {
                     className="
                       px-3 py-1 text-sm text-gray-300
                       bg-dark-400/40 border border-white/10
-                      rounded-md backdrop-blur-md
+                      rounded-md backdrop-blur-sm
                       hover:bg-purple/20 hover:text-white
                       transition-all duration-200
                     "
