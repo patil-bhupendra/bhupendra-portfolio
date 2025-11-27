@@ -58,6 +58,8 @@ This portfolio highlights:
 - Social profiles
 
 ## 📂 Folder Structure
+
+```
 .
 ├── eslint.config.js
 ├── index.html
@@ -102,6 +104,9 @@ This portfolio highlights:
 │       └── Home.jsx
 ├── tailwind.config.js
 └── vite.config.js
+
+```
+
 
 
 ## 💻 Installation
