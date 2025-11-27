@@ -137,8 +137,6 @@ My skills include:
 
 ## 📫 Contact Me
 **- Portfolio:** [https://bhupendra-portfolio-cyan.vercel.app](https://bhupendra-portfolio-cyan.vercel.app)
-
 **- Email:** bhupendrarajput1232@gmail.com  
-
 **- LinkedIn:** [https://linkedin.com/in/patil-bhupendra](https://linkedin.com/in/patil-bhupendra)  
 
