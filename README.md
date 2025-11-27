@@ -37,4 +37,8 @@ This portfolio highlights:
 ### ✔ Smooth Animations
 - Subtle motion effects using Framer Motion
 
+### Projects Section
+- Project cards with:
+  - **Screenshots**
+
 
