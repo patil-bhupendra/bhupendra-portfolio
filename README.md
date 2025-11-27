@@ -40,5 +40,8 @@ This portfolio highlights:
 ### Projects Section
 - Project cards with:
   - **Screenshots**
+  - **Descriptions**
+  - **Tech used**
+  - **Live demo + source code**
 
 
