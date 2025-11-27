@@ -3,10 +3,10 @@
 A professional, responsive, and animated personal portfolio website built using **React.js, Tailwind CSS, Framer Motion, and Vite**.
 This portfolio showcases my skills, major projects, experience, and professional background in a clean and modern interface.
 
-## Live Portfolio
+## 🔗 Live Portfolio
 [Visit Portfolio](https://bhupendra-portfolio-cyan.vercel.app/)
 
-## Overview
+## 📌 Overview
 This portfolio highlights:
 - **Full Stack MERN Development Skills**
 - **Major live projects**
