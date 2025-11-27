@@ -20,3 +20,7 @@ This portfolio highlights:
 - **Tailwind CSS**
 - **Framer Motion**
 - **React Icons**
+
+### Tools & Deployment
+- **Vercel**
+- **Git / GitHub**
