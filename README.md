@@ -30,3 +30,11 @@ This portfolio highlights:
 - Clean layout
 - Uniform spacing
 - Professional color palette
+
+### ✔ Fully Responsive
+- Works smoothly on mobile, tablet, and desktop
+
+### ✔ Smooth Animations
+- Subtle motion effects using Framer Motion
+
+
