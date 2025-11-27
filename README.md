@@ -24,3 +24,9 @@ This portfolio highlights:
 ### Tools & Deployment
 - **Vercel**
 - **Git / GitHub**
+
+## ✨ Features
+### ✔ Modern UI
+- Clean layout
+- Uniform spacing
+- Professional color palette
