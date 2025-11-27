@@ -121,3 +121,16 @@ npm run dev
 To create a production build:
 ```bash
 npm run build
+```
+## 👨‍💻 About Me
+### Bhupendra — Full Stack MERN Developer
+I specialize in building responsive, scalable, and modern web applications.
+My skills include:
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+- Tailwind CSS
+- Redux Toolkit
+- RTK Query
+- REST APIs
