@@ -112,3 +112,10 @@ git clone https://github.com/your-username/your-portfolio.git
 cd your-portfolio
 npm install
 npm run dev
+
+## 🚀 Build & Deployment
+
+### Clone the repository
+To create a production build:
+```bash
+npm run build
