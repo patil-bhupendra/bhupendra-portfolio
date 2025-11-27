@@ -13,3 +13,10 @@ This portfolio highlights:
 - **Technical expertise**
 - **About me & contact details**
 - **Responsive and animated UI**
+
+## 🛠 Tech Stack
+### Frontend
+- **React.js**
+- **Tailwind CSS**
+- **Framer Motion**
+- **React Icons**
