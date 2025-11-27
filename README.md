@@ -44,4 +44,16 @@ This portfolio highlights:
   - **Tech used**
   - **Live demo + source code**
 
+### ✔ Skills Section
+- Categorized into:
+  - **Frontend**
+  - **Backend**
+  - **Database**
+  - **Tools**
+
+### ✔ Contact Section
+- Email
+- GitHub
+- LinkedIn
+- Social profiles
 
