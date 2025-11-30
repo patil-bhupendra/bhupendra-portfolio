@@ -52,7 +52,7 @@ const Footer = () => {
           <h3 className="text-xl font-semibold text-white">Connect</h3>
           <div className="flex items-center gap-5 text-2xl">
             <a
-              href="https://github.com/bhupendrapatil123"
+              href="https://github.com/patil-bhupendra"
               target="_blank"
               className="hover:text-white transition"
             >

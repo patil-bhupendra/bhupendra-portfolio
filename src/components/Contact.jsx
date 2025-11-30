@@ -102,7 +102,7 @@ const Contact = () => {
               <h3 className="text-lg font-semibold mb-4">Follow Me</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/bhupendrapatil123"
+                  href="https://github.com/patil-bhupendra"
                   target="_blank"
                   className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center hover:bg-black hover:text-white transition"
                 >
