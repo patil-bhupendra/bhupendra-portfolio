@@ -147,5 +147,5 @@ My skills include:
 
 **- LinkedIn:** [https://linkedin.com/in/patil-bhupendra](https://linkedin.com/in/patil-bhupendra)  
 
-## ⭐ Support the Project
+## ⭐ 
 If this project inspires you, feel free to give it a **⭐ on GitHub**!
