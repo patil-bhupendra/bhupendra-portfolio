@@ -71,7 +71,7 @@ const Projects = () => {
         {/* View More Button */}
         <div className="text-center mt-12">
           <a
-            href="https://github.com/bhupendrapatil123?tab=repositories"
+            href="https://github.com/patil-bhupendra?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-purple rounded-lg font-medium hover:bg-purple/20 transition duration-300 text-purple"
