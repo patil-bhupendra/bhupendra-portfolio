@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
-import resumePDF from "../assets/BhupendraPatil_Resume.pdf";
+import resumePDF from "../assets/Bhupendra_Patil_Resume.pdf";
 
 /* Framer motion variants */
 const navVariants = {
