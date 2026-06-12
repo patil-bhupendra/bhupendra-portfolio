@@ -7,9 +7,10 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <footer className="bg-dark-300 border-t border-white/10 py-14 relative">
+    <footer className="relative py-14 bg-dark-300 overflow-hidden border-t border-white/10">
       {" "}
-      <div className="container mx-auto px-6">
+      
+      <div className="container relative z-10 mx-auto px-6">
         {" "}
         <div className="grid md:grid-cols-3 gap-10 text-gray-300">
           {" "}
@@ -21,10 +22,7 @@ const Footer = () => {
             className="space-y-4"
           >
             {" "}
-            <h3 className="text-xl font-semibold text-white">
-              {" "}
-              Bhupendra Patil{" "}
-            </h3>{" "}
+            <h3 className="text-2xl font-bold text-white">Bhupendra Patil</h3>
             <p className="text-purple font-medium">
               {" "}
               Full Stack MERN Developer{" "}
