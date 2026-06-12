@@ -5,6 +5,15 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    title: "Readora - Bookstore Web Application",
+    description:
+      "Built a complete MERN e-commerce bookstore with JWT authentication, cart management, checkout flow, order tracking, and admin dashboard.",
+    image: "/bookstore.png",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "RTK Query"],
+    demo: "https://bookstore-mern-v2.vercel.app/",
+    github: "https://github.com/patil-bhupendra/bookstore-mern-v2",
+  },
+  {
     title: "Stock Trading Platform",
     description:
       "Developed a full-stack MERN trading platform featuring holdings, watchlists, fund management, order placement, and real-time portfolio tracking.",
@@ -12,15 +21,6 @@ const projects = [
     tech: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "MongoDB"],
     demo: "https://stock-trading-platform-puce.vercel.app",
     github: "https://github.com/patil-bhupendra/Stock-Trading-Platform",
-  },
-  {
-    title: "Readora - Bookstore Web Application",
-    description:
-      "Built a complete MERN e-commerce bookstore with JWT authentication, cart management, checkout flow, order tracking, and admin dashboard.",
-    image: "/bookstore.png",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "RTK Query"],
-    demo: "https://book-store-camp.vercel.app/",
-    github: "https://github.com/patil-bhupendra/bookStoreApp",
   },
   {
     title: "Wanderlust",
