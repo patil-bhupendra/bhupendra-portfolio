@@ -1,27 +1,31 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGithub, FaInstagram, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   return (
-    <motion.div
+    <motion.section
+      id="contact"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.2 }}
-      id="contact"
       className="py-20 bg-dark-200"
     >
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-4">
-          Get In <span className="text-purple">Touch</span>
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          Let's <span className="text-purple">Connect</span>
         </h2>
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          Have a project in mind or want to collaborate? Let's talk!
+
+        <p className="text-gray-400 text-center max-w-3xl mx-auto mb-16">
+          I'm actively seeking Full Stack Developer opportunities and exciting
+          projects. Feel free to reach out for collaborations, internships,
+          freelance work, or professional discussions.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div>
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -29,10 +33,20 @@ const Contact = () => {
                 <label htmlFor="name" className="block text-gray-300 mb-2">
                   Your Name
                 </label>
+
                 <input
-                  name="name"
-                  className="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none"
                   type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  className="
+                    w-full px-4 py-3
+                    bg-dark-300
+                    border border-dark-400
+                    rounded-lg
+                    outline-none
+                    focus:border-purple
+                    transition
+                  "
                 />
               </div>
 
@@ -40,10 +54,20 @@ const Contact = () => {
                 <label htmlFor="email" className="block text-gray-300 mb-2">
                   Email Address
                 </label>
+
                 <input
-                  name="email"
-                  className="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none"
                   type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  className="
+                    w-full px-4 py-3
+                    bg-dark-300
+                    border border-dark-400
+                    rounded-lg
+                    outline-none
+                    focus:border-purple
+                    transition
+                  "
                 />
               </div>
 
@@ -51,60 +75,114 @@ const Contact = () => {
                 <label htmlFor="message" className="block text-gray-300 mb-2">
                   Your Message
                 </label>
+
                 <textarea
                   name="message"
-                  className="w-full h-40 bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none"
+                  placeholder="Write your message..."
+                  className="
+                    w-full h-40
+                    px-4 py-3
+                    bg-dark-300
+                    border border-dark-400
+                    rounded-lg
+                    outline-none
+                    resize-none
+                    focus:border-purple
+                    transition
+                  "
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-purple rounded-lg font-medium hover:bg-purple-700 transition duration-300"
+                className="
+                  w-full
+                  px-6 py-3
+                  bg-purple
+                  rounded-lg
+                  font-medium
+                  hover:bg-purple/80
+                  transition-all duration-300
+                "
               >
-                Send
+                Send Message
               </button>
             </form>
           </div>
 
           {/* Contact Information */}
           <div className="space-y-8">
+            {/* Intro Card */}
+            <div className="p-6 rounded-xl bg-dark-300 border border-dark-400">
+              <h3 className="text-xl font-semibold mb-3">
+                Full Stack MERN Developer
+              </h3>
+
+              <p className="text-gray-400 leading-relaxed">
+                Passionate about building scalable, secure, and responsive web
+                applications using React.js, Node.js, Express.js, and MongoDB.
+                Open to Full Stack, Frontend, and Backend development
+                opportunities.
+              </p>
+
+              <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-sm">
+                ● Available for Opportunities
+              </div>
+            </div>
+
+            {/* Location */}
             <div className="flex items-start">
-              <div className="text-2xl mr-4">
+              <div className="text-2xl text-purple mr-4">
                 <FaMapMarkerAlt />
               </div>
+
               <div>
-                <h3 className="text-lg font-semibold mb-2">Location</h3>
+                <h3 className="text-lg font-semibold mb-1">Location</h3>
                 <p className="text-gray-400">Shirpur, Maharashtra, India</p>
               </div>
             </div>
 
+            {/* Email */}
             <div className="flex items-start">
-              <div className="text-2xl mr-4">
+              <div className="text-2xl text-purple mr-4">
                 <FaEnvelope />
               </div>
+
               <div>
-                <h3 className="text-lg font-semibold mb-2">Email</h3>
+                <h3 className="text-lg font-semibold mb-1">Email</h3>
                 <p className="text-gray-400">bhupendrapatil1232@gmail.com</p>
               </div>
             </div>
 
+            {/* Phone */}
             <div className="flex items-start">
-              <div className="text-2xl mr-4">
+              <div className="text-2xl text-purple mr-4">
                 <FaPhone />
               </div>
+
               <div>
-                <h3 className="text-lg font-semibold mb-2">Phone</h3>
+                <h3 className="text-lg font-semibold mb-1">Phone</h3>
                 <p className="text-gray-400">+91 8378097953</p>
               </div>
             </div>
 
-            <div className="pt-4">
-              <h3 className="text-lg font-semibold mb-4">Follow Me</h3>
-              <div className="flex space-x-4">
+            {/* Social Links */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Connect With Me</h3>
+
+              <div className="flex gap-4">
                 <a
                   href="https://github.com/patil-bhupendra"
                   target="_blank"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center hover:bg-black hover:text-white transition"
+                  rel="noopener noreferrer"
+                  className="
+                    w-12 h-12
+                    rounded-full
+                    bg-dark-300
+                    flex items-center justify-center
+                    hover:bg-purple
+                    transition-all duration-300
+                  "
                 >
                   <FaGithub />
                 </a>
@@ -112,7 +190,15 @@ const Contact = () => {
                 <a
                   href="https://www.linkedin.com/in/patil-bhupendra"
                   target="_blank"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-white hover:bg-black hover:text-white transition"
+                  rel="noopener noreferrer"
+                  className="
+                    w-12 h-12
+                    rounded-full
+                    bg-dark-300
+                    flex items-center justify-center
+                    hover:bg-purple
+                    transition-all duration-300
+                  "
                 >
                   <FaLinkedin />
                 </a>
@@ -120,24 +206,37 @@ const Contact = () => {
                 <a
                   href="https://x.com/BhupendraR97314"
                   target="_blank"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-white hover:bg-black hover:text-white transition"
+                  rel="noopener noreferrer"
+                  className="
+                    w-12 h-12
+                    rounded-full
+                    bg-dark-300
+                    flex items-center justify-center
+                    hover:bg-purple
+                    transition-all duration-300
+                  "
                 >
                   <FaXTwitter />
                 </a>
-
-                <a
-                  href="https://www.instagram.com/_.bhupendra.rajput._/"
-                  target="_blank"
-                  className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-white hover:bg-black hover:text-white transition"
-                >
-                  <FaInstagram />
-                </a>
               </div>
+
+              <a
+                href="mailto:bhupendrapatil1232@gmail.com"
+                className="
+                  inline-flex items-center gap-2
+                  mt-6
+                  text-purple
+                  hover:underline
+                "
+              >
+                <FaEnvelope />
+                Send Email
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
 

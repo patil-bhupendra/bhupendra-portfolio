@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
@@ -10,13 +9,7 @@ const projects = [
     description:
       "Developed a full-stack MERN trading platform featuring holdings, watchlists, fund management, order placement, and real-time portfolio tracking.",
     image: "/stock.png",
-    tech: [
-      "React.js",
-      "Redux Toolkit",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-    ],
+    tech: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "MongoDB"],
     demo: "https://stock-trading-platform-puce.vercel.app",
     github: "https://github.com/patil-bhupendra/Stock-Trading-Platform",
   },
@@ -25,14 +18,7 @@ const projects = [
     description:
       "Built a complete MERN e-commerce bookstore with JWT authentication, cart management, checkout flow, order tracking, and admin dashboard.",
     image: "/bookstore.png",
-    tech: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT",
-      "RTK Query",
-    ],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "RTK Query"],
     demo: "https://book-store-camp.vercel.app/",
     github: "https://github.com/patil-bhupendra/bookStoreApp",
   },
@@ -72,8 +58,8 @@ const Projects = () => {
 
         <p className="text-gray-400 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
           A showcase of full-stack web applications built using the MERN stack,
-          demonstrating expertise in frontend development, backend
-          architecture, authentication, database management, and deployment.
+          demonstrating expertise in frontend development, backend architecture,
+          authentication, database management, and deployment.
         </p>
 
         {/* Projects Grid */}
