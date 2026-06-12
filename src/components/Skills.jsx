@@ -1,48 +1,64 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaReact,
-  FaServer,
-  FaDatabase,
-  FaCloud,
-  FaTools,
-} from "react-icons/fa";
+import { FaReact, FaServer, FaDatabase, FaTools, FaCode } from "react-icons/fa";
 
 const skills = [
   {
     icon: FaReact,
     title: "Frontend Development",
     description:
-      "Building responsive and interactive user interfaces with modern frameworks.",
-    tags: ["React", "JavaScript", "HTML", "CSS"],
+      "Building modern, responsive, and user-friendly web applications with React and modern frontend technologies.",
+    tags: [
+      "React.js",
+      "JavaScript",
+      "Redux Toolkit",
+      "RTK Query",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+    ],
   },
   {
     icon: FaServer,
     title: "Backend Development",
     description:
-      "Developing scalable backend systems and RESTful APIs for web applications.",
-    tags: ["Node.js", "Express", "REST API"],
+      "Creating secure and scalable RESTful APIs with authentication, authorization, and business logic implementation.",
+    tags: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "JWT",
+      "Authentication",
+      "Authorization",
+    ],
   },
   {
     icon: FaDatabase,
     title: "Database Management",
     description:
-      "Designing and optimizing databases for performance and scalability.",
-    tags: ["MongoDB", "PostgreSQL", "MySQL"],
+      "Designing and managing efficient databases for full-stack applications with optimized data handling.",
+    tags: ["MongoDB", "Mongoose", "Database Design", "CRUD Operations"],
   },
   {
-    icon: FaCloud,
-    title: "Cloud & DevOps",
+    icon: FaCode,
+    title: "Programming & Problem Solving",
     description:
-      "Deploying and managing cloud applications and infrastructure.",
-    tags: ["AWS", "Docker", "CI/CD"],
+      "Applying strong programming fundamentals and problem-solving skills to build reliable software solutions.",
+    tags: [
+      "Java",
+      "JavaScript",
+      "Data Structures",
+      "Algorithms",
+      "OOP",
+      "Problem Solving",
+    ],
   },
   {
     icon: FaTools,
-    title: "Tools & Technologies",
+    title: "Tools & Deployment",
     description:
-      "Using essential tools to improve development efficiency and workflow.",
-    tags: ["Git", "GitHub", "Figma", "Webpack"],
+      "Using modern development tools, version control systems, and deployment platforms for efficient workflows.",
+    tags: ["Git", "GitHub", "Postman", "VS Code", "Vercel", "Render"],
   },
 ];
 
@@ -71,16 +87,40 @@ const Skills = () => {
     >
       <div className="container mx-auto px-6">
         {/* Heading */}
-        <h2 className="text-3xl font-bold text-center mb-4">
-          My <span className="text-purple">Skills</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          Technical <span className="text-purple">Skills</span>
         </h2>
 
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          Technologies I work with to bring ideas to life
+        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
+          Technologies and tools I use to build scalable full-stack web
+          applications with the MERN stack.
         </p>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-purple">5+</h3>
+            <p className="text-gray-400">Major Projects</p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-purple">15+</h3>
+            <p className="text-gray-400">Technologies</p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-purple">MERN</h3>
+            <p className="text-gray-400">Specialization</p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-purple">Full Stack</h3>
+            <p className="text-gray-400">Developer</p>
+          </div>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.title}
@@ -89,28 +129,32 @@ const Skills = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              whileHover={{ y: -6, scale: 1.01 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.25 }}
-              style={{ transform: "translateZ(0)" }}
               className="
-                will-change-transform
-                backdrop-blur-md bg-dark-300/40
+                backdrop-blur-md
+                bg-dark-300/40
                 border border-white/10
-                shadow-lg rounded-2xl p-6
-                hover:shadow-purple/30 hover:border-purple/30
-                transition-all duration-300 cursor-pointer
+                rounded-2xl
+                p-6
+                shadow-lg
+                hover:border-purple/40
+                hover:shadow-purple/20
+                transition-all duration-300
+                cursor-pointer
               "
             >
-              {/* Icon + Title */}
+              {/* Icon & Title */}
               <div className="flex items-center mb-5">
                 <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-dark-400/60 border border-white/10 mr-4">
-                  <skill.icon className="w-7 h-7 text-purple" />
+                  <skill.icon className="w-6 h-6 text-purple" />
                 </div>
+
                 <h3 className="text-xl font-semibold">{skill.title}</h3>
               </div>
 
               {/* Description */}
-              <p className="text-gray-400 mb-5 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed mb-5">
                 {skill.description}
               </p>
 
@@ -120,10 +164,14 @@ const Skills = () => {
                   <span
                     key={tag}
                     className="
-                      px-3 py-1 text-sm text-gray-300
-                      bg-dark-400/40 border border-white/10
-                      rounded-md backdrop-blur-sm
-                      hover:bg-purple/20 hover:text-white
+                      px-3 py-1
+                      text-sm
+                      text-gray-300
+                      bg-dark-400/40
+                      border border-white/10
+                      rounded-md
+                      hover:bg-purple/20
+                      hover:text-white
                       transition-all duration-200
                     "
                   >
