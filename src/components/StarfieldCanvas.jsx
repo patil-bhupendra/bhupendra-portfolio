@@ -1,63 +1,163 @@
+// import React, { useRef, useEffect } from "react";
+
+// const StarfieldCanvas = ({ speed = 0.2, starCount = 120 }) => {
+//   const canvasRef = useRef(null);
+//   const rafRef = useRef(null);
+//   const starsRef = useRef([]);
+
+//   useEffect(() => {
+//     const canvas = canvasRef.current;
+//     if (!canvas) return;
+//     const ctx = canvas.getContext("2d");
+
+//     let w = (canvas.width = canvas.clientWidth);
+//     let h = (canvas.height = canvas.clientHeight);
+
+//     const init = () => {
+//       starsRef.current = [];
+//       for (let i = 0; i < starCount; i++) {
+//         starsRef.current.push({
+//           x: Math.random() * w,
+//           y: Math.random() * h,
+//           z: Math.random(),
+//           r: Math.random() * 1.2 + 0.2,
+//           a: 0.7 + Math.random() * 0.3,
+//         });
+//       }
+//     };
+
+//     init();
+
+//     const frame = () => {
+//       ctx.clearRect(0, 0, w, h);
+//       for (let s of starsRef.current) {
+//         s.y -= speed * s.z;
+//         if (s.y < 0) {
+//           s.y = h;
+//           s.x = Math.random() * w;
+//         }
+//         ctx.globalAlpha = s.a;
+//         ctx.fillStyle = "#fff";
+//         ctx.beginPath();
+//         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+//         ctx.fill();
+//         ctx.globalAlpha = 1;
+//       }
+//       rafRef.current = requestAnimationFrame(frame);
+//     };
+
+//     rafRef.current = requestAnimationFrame(frame);
+
+//     return () => cancelAnimationFrame(rafRef.current);
+//   }, [speed, starCount]);
+
+//   return (
+//     <canvas
+//       ref={canvasRef}
+//       className="absolute inset-0 w-full h-full"
+//       style={{ zIndex: 0 }}
+//     />
+//   );
+// };
+
+// export default StarfieldCanvas;
+
+
+
 import React, { useRef, useEffect } from "react";
 
-const StarfieldCanvas = ({ speed = 0.2, starCount = 120 }) => {
+const StarfieldCanvas = ({ speed = 0.15, starCount = 180 }) => {
   const canvasRef = useRef(null);
-  const rafRef = useRef(null);
+  const animationRef = useRef(null);
   const starsRef = useRef([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
 
-    let w = (canvas.width = canvas.clientWidth);
-    let h = (canvas.height = canvas.clientHeight);
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      createStars();
+    };
 
-    const init = () => {
+    const createStars = () => {
       starsRef.current = [];
+
       for (let i = 0; i < starCount; i++) {
         starsRef.current.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          z: Math.random(),
-          r: Math.random() * 1.2 + 0.2,
-          a: 0.7 + Math.random() * 0.3,
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.8 + 0.3,
+          alpha: Math.random(),
+          alphaSpeed: Math.random() * 0.015 + 0.003,
+          direction: Math.random() > 0.5 ? 1 : -1,
+          speed: Math.random() * speed + 0.05,
         });
       }
     };
 
-    init();
+    resizeCanvas();
 
-    const frame = () => {
-      ctx.clearRect(0, 0, w, h);
-      for (let s of starsRef.current) {
-        s.y -= speed * s.z;
-        if (s.y < 0) {
-          s.y = h;
-          s.x = Math.random() * w;
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      starsRef.current.forEach((star) => {
+        // Twinkle
+        star.alpha += star.alphaSpeed * star.direction;
+
+        if (star.alpha >= 1) {
+          star.direction = -1;
         }
-        ctx.globalAlpha = s.a;
-        ctx.fillStyle = "#fff";
+
+        if (star.alpha <= 0.2) {
+          star.direction = 1;
+        }
+
+        // Float upward
+        star.y -= star.speed;
+
+        if (star.y < 0) {
+          star.y = canvas.height;
+          star.x = Math.random() * canvas.width;
+        }
+
+        // Draw star glow
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+
+        ctx.fillStyle = `rgba(255,255,255,${star.alpha})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "rgba(255,255,255,0.8)";
         ctx.fill();
-        ctx.globalAlpha = 1;
-      }
-      rafRef.current = requestAnimationFrame(frame);
+      });
+
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    rafRef.current = requestAnimationFrame(frame);
+    animate();
 
-    return () => cancelAnimationFrame(rafRef.current);
+    window.addEventListener("resize", resizeCanvas);
+
+    return () => {
+      cancelAnimationFrame(animationRef.current);
+      window.removeEventListener("resize", resizeCanvas);
+    };
   }, [speed, starCount]);
 
   return (
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ zIndex: 0 }}
+      style={{
+        zIndex: 0,
+        pointerEvents: "none",
+      }}
     />
   );
 };
 
 export default StarfieldCanvas;
+
