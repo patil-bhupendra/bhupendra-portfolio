@@ -11,11 +11,16 @@ const Contact = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.2 }}
-      className="py-20 bg-dark-200"
+      className="relative py-20 bg-dark-200 overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 blur-3xl rounded-full" />
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-500/10 blur-3xl rounded-full" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-6">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
           Let's <span className="text-purple">Connect</span>
         </h2>
 
@@ -27,7 +32,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div>
+          <div className="backdrop-blur-md bg-dark-300/60 border border-white/10 rounded-2xl p-8">
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label htmlFor="name" className="block text-gray-300 mb-2">
@@ -60,14 +65,15 @@ const Contact = () => {
                   name="email"
                   placeholder="Enter your email"
                   className="
-                    w-full px-4 py-3
-                    bg-dark-300
-                    border border-dark-400
-                    rounded-lg
-                    outline-none
-                    focus:border-purple
-                    transition
-                  "
+w-full px-4 py-3
+bg-dark-300/60
+backdrop-blur-md
+border border-white/10
+rounded-lg
+outline-none
+focus:border-purple
+transition
+"
                 />
               </div>
 
@@ -113,7 +119,12 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Intro Card */}
-            <div className="p-6 rounded-xl bg-dark-300 border border-dark-400">
+            <div
+              className="p-6 rounded-xl backdrop-blur-md
+bg-dark-300/60
+border border-white/10
+rounded-2xl"
+            >
               <h3 className="text-xl font-semibold mb-3">
                 Full Stack MERN Developer
               </h3>
