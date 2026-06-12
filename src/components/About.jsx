@@ -75,8 +75,8 @@ const About = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-purple-700 via-transparent to-transparent opacity-25 rounded-3xl z-10" />
             {/* Static Profile */}
             <img
-              src={assets.profileImg}
-              alt="Profile"
+              src={assets.profileImg7}
+              alt="AboutProfile"
               className="relative z-20 w-full h-full object-cover rounded-3xl shadow-inner border border-purple-500/20"
             />
           </div>
