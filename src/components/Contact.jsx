@@ -150,7 +150,7 @@ const Contact = () => {
 
               <div>
                 <h3 className="text-lg font-semibold mb-1">Email</h3>
-                <p className="text-gray-400">bhupendrapatil1232@gmail.com</p>
+                <p className="text-gray-400">bhupendrarajput1232@gmail.com</p>
               </div>
             </div>
 
@@ -221,7 +221,7 @@ const Contact = () => {
               </div>
 
               <a
-                href="mailto:bhupendrapatil1232@gmail.com"
+                href="mailto:bhupendrarajput1232@gmail.com"
                 className="
                   inline-flex items-center gap-2
                   mt-6
