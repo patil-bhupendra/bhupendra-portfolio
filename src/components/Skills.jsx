@@ -83,11 +83,15 @@ const Skills = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.3 }}
-      className="py-20 bg-dark-100"
+      className="relative py-20 bg-dark-100 overflow-hidden"
     >
-      <div className="container mx-auto px-6">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 blur-3xl rounded-full" />
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-500/10 blur-3xl rounded-full" />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6">
           Technical <span className="text-purple">Skills</span>
         </h2>
 
@@ -95,29 +99,6 @@ const Skills = () => {
           Technologies and tools I use to build scalable full-stack web
           applications with the MERN stack.
         </p>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-purple">3+</h3>
-            <p className="text-gray-400">Major Projects</p>
-          </div>
-
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-purple">15+</h3>
-            <p className="text-gray-400">Technologies</p>
-          </div>
-
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-purple">MERN</h3>
-            <p className="text-gray-400">Specialization</p>
-          </div>
-
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-purple">Full Stack</h3>
-            <p className="text-gray-400">Developer</p>
-          </div>
-        </div>
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -133,13 +114,13 @@ const Skills = () => {
               transition={{ duration: 0.25 }}
               className="
                 backdrop-blur-md
-                bg-dark-300/40
+                bg-dark-300/60
                 border border-white/10
                 rounded-2xl
                 p-6
                 shadow-lg
                 hover:border-purple/40
-                hover:shadow-purple/20
+                hover:shadow-[0_0_30px_rgba(139,92,246,0.25)]
                 transition-all duration-300
                 cursor-pointer
               "

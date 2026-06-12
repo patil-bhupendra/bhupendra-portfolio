@@ -3,23 +3,40 @@ import React from "react";
 const ProjectCard = ({ title, description, image, tech, demo, github }) => {
   return (
     <div
-      className="bg-dark-300 rounded-2xl overflow-hidden 
-      transition-all duration-300 cursor-pointer border border-dark-100 
-      hover:-translate-y-2 hover:shadow-xl hover:shadow-purple/10"
+      className="
+group
+h-full
+flex
+flex-col
+backdrop-blur-md
+bg-dark-300/60
+border border-white/10
+rounded-2xl
+overflow-hidden
+transition-all duration-300
+cursor-pointer
+hover:-translate-y-2
+hover:border-purple/40
+hover:shadow-[0_0_30px_rgba(139,92,246,0.25)]
+"
     >
       {/* Image */}
-      <img
-        src={image}
-        alt={title}
-        loading="lazy" 
-        className="w-full h-56 object-cover"
-      />
+      <div className="relative overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+      </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
 
-        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+        <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">
           {description}
         </p>
 
@@ -28,10 +45,14 @@ const ProjectCard = ({ title, description, image, tech, demo, github }) => {
           {tech.map((item) => (
             <span
               key={item}
-              className="text-xs px-3 py-1 rounded-full 
-              bg-dark-100 text-purple-300 
-              border border-purple/20 
-              shadow-sm shadow-purple/10"
+              className="
+text-xs px-3 py-1 rounded-full
+bg-dark-400/40
+text-gray-300
+border border-white/10
+hover:bg-purple/20
+hover:text-white
+transition-all duration-200"
             >
               {item}
             </span>

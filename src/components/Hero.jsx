@@ -1,4 +1,3 @@
-
 // src/components/Hero.jsx
 import React from "react";
 import { motion } from "framer-motion";
@@ -38,7 +37,7 @@ const Hero = () => {
       />
 
       {/* Main Content */}
-      <div className="container relative z-10 mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+      <div className="container relative z-10 mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-10 lg:gap-14">
         {/* Left Content */}
         <motion.div
           className="md:w-1/2"
@@ -46,17 +45,13 @@ const Hero = () => {
           initial="hidden"
           animate="show"
         >
-          <p className="text-purple font-medium mb-4">
-            MCA Graduate • MERN Stack Developer
-          </p>
-
           <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white mb-6">
             Building Modern
             <br />
             <span className="text-purple">Full-Stack Web Applications</span>
           </h1>
 
-          <p className="text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
+          <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mb-8">
             I'm Bhupendra Patil, a Full Stack Developer specializing in
             React.js, Node.js, Express.js, and MongoDB. I enjoy building
             scalable web applications and solving real-world problems through
@@ -118,10 +113,10 @@ const Hero = () => {
         >
           <div className="relative w-72 md:w-96">
             {/* Soft Glow */}
-            <div className="absolute inset-0 bg-purple/20 blur-3xl rounded-3xl"></div>
+            <div className="absolute inset-0 bg-purple/30 blur-[100px] rounded-3xl"></div>
 
             {/* Image */}
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden border border-purple-500/20 shadow-2xl">
               <img
                 src={assets.profileImg}
                 alt="Bhupendra Patil"
@@ -136,4 +131,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
