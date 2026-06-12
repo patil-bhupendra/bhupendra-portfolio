@@ -116,10 +116,10 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed w-full z-50 px-4 md:px-8 py-3"
+            className="fixed w-full z-50 px-6 py-3"
           >
             <nav
-              className={`w-full mx-auto flex items-center justify-between container transition-all duration-300 rounded-2xl ${
+              className={`container mx-auto flex items-center justify-between transition-all duration-300 rounded-2xl ${
                 scrolled
                   ? "bg-black/30 backdrop-blur-xl border border-white/10 shadow-xl"
                   : "bg-transparent"
@@ -141,12 +141,12 @@ const Navbar = () => {
                   </div>
 
                   <div className="leading-tight">
-                    <h3 className="text-white font-bold text-lg">
+                    <h3 className="text-white font-semibold text-base">
                       Bhupendra Patil
                     </h3>
 
-                    <p className="text-xs text-gray-400">
-                      MERN Stack Developer
+                    <p className="text-[10px] text-gray-400">
+                      Full Stack Developer
                     </p>
                   </div>
                 </motion.div>
@@ -186,7 +186,17 @@ const Navbar = () => {
                   href={resumePDF}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/90 hover:bg-purple/100 text-white text-sm font-medium transition"
+                  className="
+inline-flex items-center gap-2
+px-5 py-2.5
+rounded-full
+bg-purple
+hover:bg-purple-700
+text-white
+font-medium
+transition-all duration-300
+shadow-lg shadow-purple/30
+"
                 >
                   Resume
                 </a>
@@ -230,12 +240,12 @@ const Navbar = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-white font-semibold">
+                    <h3 className="text-white font-semibold text-base">
                       Bhupendra Patil
                     </h3>
 
-                    <p className="text-xs text-gray-400">
-                      MERN Stack Developer
+                    <p className="text-[10px] text-gray-400">
+                      Full Stack Developer
                     </p>
                   </div>
                 </div>
