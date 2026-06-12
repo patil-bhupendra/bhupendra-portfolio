@@ -67,7 +67,7 @@ const About = () => {
     <section
       id="about"
       onMouseMove={handleMouseMove}
-      className="relative py-28 bg-gradient-to-b from-dark-200 to-dark-300 overflow-hidden"
+      className="relative py-20 bg-gradient-to-b from-dark-200 to-dark-300 overflow-hidden"
     >
       {/* Background Orbs */}
       <div className="absolute inset-0">
@@ -84,18 +84,18 @@ const About = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-white tracking-wide">
-          About <span className="text-purple-400">Me</span>
+        <h2 className="text-3xl font-bold text-center mb-4">
+          About <span className="text-purple">Me</span>
         </h2>
 
-        <p className="text-gray-400 text-center max-w-3xl mx-auto mb-24 text-lg md:text-xl">
+        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
           MCA graduate and Full Stack MERN Developer with a passion for building
           scalable, responsive, and user-friendly web applications.
         </p>
 
-        <div className="flex flex-col md:flex-row items-center gap-20">
+        <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-14">
           {/* Profile Image */}
-          <div className="md:w-1/2 relative rounded-3xl overflow-hidden shadow-2xl">
+          <div className="md:w-[45%] h-[500px] relative rounded-3xl overflow-hidden shadow-2xl">
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-400 opacity-30 blur-3xl z-0" />
 
             <div className="absolute inset-0 bg-gradient-to-t from-purple-700 via-transparent to-transparent opacity-25 rounded-3xl z-10" />
@@ -108,8 +108,8 @@ const About = () => {
           </div>
 
           {/* Content */}
-          <div className="md:w-1/2">
-            <div className="rounded-3xl p-10 bg-dark-400/70 backdrop-blur-md shadow-2xl border border-purple-500/10">
+          <div className="md:w-[60%]">
+            <div className="rounded-3xl p-8 bg-dark-400/70 backdrop-blur-md shadow-2xl border border-purple-500/10">
               <p className="text-gray-200 mb-6 text-lg leading-relaxed">
                 I'm a Full Stack MERN Developer with hands-on experience
                 building modern web applications using React.js, Node.js,
@@ -130,7 +130,7 @@ const About = () => {
               <div className="grid grid-cols-3 gap-4 mb-10">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-purple-400">3+</h3>
-                  <p className="text-sm text-gray-400">Major Projects</p>
+                  <p className="text-sm text-gray-400">Production Projects</p>
                 </div>
 
                 <div className="text-center">
@@ -150,17 +150,18 @@ const About = () => {
                   <div
                     key={i}
                     className="
-                      bg-dark-300
-                      rounded-2xl
-                      p-6
-                      cursor-pointer
-                      border border-purple-400/20
-                      shadow-lg
-                      hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]
-                      hover:-translate-y-1
-                      transition-all
-                      duration-300
-                    "
+  bg-dark-300
+  rounded-2xl
+  p-6
+  h-full
+  cursor-pointer
+  border border-purple-400/20
+  shadow-lg
+  hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]
+  hover:-translate-y-1
+  transition-all
+  duration-300
+"
                   >
                     <div className="text-white text-4xl mb-4">
                       <data.icon />
