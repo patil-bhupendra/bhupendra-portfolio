@@ -48,11 +48,15 @@ const Projects = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.2 }}
-      className="py-20 bg-dark-200"
+      className="relative py-20 bg-dark-200 overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 blur-3xl rounded-full" />
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-500/10 blur-3xl rounded-full" />
+      </div>
+      <div className="container relative z-10 mx-auto px-6 max-w-7xl">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
           Featured <span className="text-purple">Projects</span>
         </h2>
 
@@ -94,7 +98,9 @@ const Projects = () => {
               rounded-lg
               font-medium
               text-purple
-              hover:bg-purple/20
+              hover:bg-purple/10
+             hover:border-purple/60
+                hover:shadow-[0_0_20px_rgba(139,92,246,0.25)]
               transition-all duration-300
             "
           >
