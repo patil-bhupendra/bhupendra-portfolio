@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars } from "react-icons/fa";
@@ -68,9 +67,11 @@ const Navbar = () => {
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => e.isIntersecting && setActiveSection(e.target.id));
+        entries.forEach(
+          (e) => e.isIntersecting && setActiveSection(e.target.id),
+        );
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     sections.forEach((id) => {
@@ -120,7 +121,7 @@ const Navbar = () => {
             <nav
               className={`w-full mx-auto flex items-center justify-between container transition-all duration-300 rounded-2xl ${
                 scrolled
-                  ? "bg-white/6 backdrop-blur-md shadow-lg"
+                  ? "bg-black/30 backdrop-blur-xl border border-white/10 shadow-xl"
                   : "bg-transparent"
               }`}
             >
@@ -135,16 +136,19 @@ const Navbar = () => {
                   transition={{ duration: 0.18 }}
                   className="flex items-center gap-2 select-none"
                 >
-                  <span className="text-2xl md:text-3xl font-bold text-white">
-                    Bhupendra
-                  </span>
-                  <span className="text-purple font-bold md:text-2xl">
-                    Patil
-                  </span>
-                  <span
-                    className="w-3 h-3 rounded-full block"
-                    style={{ backgroundColor: "rgba(139,92,246,0.95)" }}
-                  />
+                  <div className="w-10 h-10 rounded-full bg-purple flex items-center justify-center text-white font-bold">
+                    BP
+                  </div>
+
+                  <div className="leading-tight">
+                    <h3 className="text-white font-bold text-lg">
+                      Bhupendra Patil
+                    </h3>
+
+                    <p className="text-xs text-gray-400">
+                      MERN Stack Developer
+                    </p>
+                  </div>
                 </motion.div>
               </a>
 
@@ -153,7 +157,7 @@ const Navbar = () => {
                 <div className="flex gap-8 items-center">
                   {sections.map((sec) => (
                     <button
-                      key={sec}
+                      key={sec.charAt(0).toUpperCase() + sec.slice(1)}
                       onClick={(e) => handleSmoothScroll(e, sec)}
                       className="relative group text-lg"
                     >
@@ -164,7 +168,7 @@ const Navbar = () => {
                             : "text-gray-200/90 hover:text-purple"
                         }`}
                       >
-                        {sec}
+                        {sec.charAt(0).toUpperCase() + sec.slice(1)}
                       </span>
                       <span
                         className={`absolute left-0 -bottom-1 h-0.5 bg-purple transition-all ${
@@ -213,7 +217,7 @@ const Navbar = () => {
 
             <motion.aside
               ref={menuRef}
-              className="fixed inset-y-0 right-0 z-50 w-[86%] max-w-sm bg-white/6 shadow-2xl p-6"
+              className="fixed inset-y-0 right-0 z-50 w-[86%] max-w-sm bg-black/90 backdrop-blur-xl shadow-2xl p-6"
               variants={mobileMenuVariants}
               initial="hidden"
               animate="visible"
@@ -221,8 +225,19 @@ const Navbar = () => {
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="text-xl font-bold text-white">Bhupendra</div>
-                  <div className="text-purple font-bold">Patil</div>
+                  <div className="w-10 h-10 rounded-full bg-purple flex items-center justify-center text-white font-bold">
+                    BP
+                  </div>
+
+                  <div>
+                    <h3 className="text-white font-semibold">
+                      Bhupendra Patil
+                    </h3>
+
+                    <p className="text-xs text-gray-400">
+                      MERN Stack Developer
+                    </p>
+                  </div>
                 </div>
                 <button
                   onClick={() => setShowMenu(false)}
@@ -235,7 +250,7 @@ const Navbar = () => {
               <nav className="flex flex-col gap-6">
                 {sections.map((sec) => (
                   <button
-                    key={sec}
+                    key={sec.charAt(0).toUpperCase() + sec.slice(1)}
                     onClick={(e) => handleSmoothScroll(e, sec)}
                     className={`text-2xl text-left transition ${
                       activeSection === sec
@@ -243,7 +258,7 @@ const Navbar = () => {
                         : "text-gray-200/90 hover:text-purple"
                     }`}
                   >
-                    {sec}
+                    {sec.charAt(0).toUpperCase() + sec.slice(1)}
                   </button>
                 ))}
 
@@ -252,7 +267,7 @@ const Navbar = () => {
                     href={resumePDF}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-purple/90 text-white font-medium"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple hover:bg-purple-700 text-white font-medium transition-all duration-300 shadow-lg shadow-purple/30 "
                   >
                     View Resume
                   </a>
@@ -267,5 +282,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
