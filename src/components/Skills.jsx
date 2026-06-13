@@ -85,14 +85,11 @@ const Skills = () => {
       viewport={{ once: false, amount: 0.3 }}
       className="relative py-20 bg-dark-100 overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 blur-3xl rounded-full" />
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-500/10 blur-3xl rounded-full" />
-      </div>
+      <div className="absolute inset-0 overflow-hidden"></div>
       <div className="container mx-auto px-6 relative z-10">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-6">
-          Technical <span className="text-purple">Skills</span>
+          Skills
         </h2>
 
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
@@ -110,7 +107,7 @@ const Skills = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ y: -4 }}
               transition={{ duration: 0.25 }}
               className="
                 backdrop-blur-md
@@ -120,9 +117,9 @@ const Skills = () => {
                 p-6
                 shadow-lg
                 hover:border-purple/40
-                hover:shadow-[0_0_30px_rgba(139,92,246,0.25)]
+                hover:border-purple/40
                 transition-all duration-300
-                cursor-pointer
+                cursor-default
               "
             >
               {/* Icon & Title */}
