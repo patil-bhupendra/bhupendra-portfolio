@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "Readora - Bookstore Web Application",
+    title: "Readora",
     description:
       "Built a complete MERN e-commerce bookstore with JWT authentication, cart management, checkout flow, order tracking, and admin dashboard.",
     image: "/bookstore.png",
@@ -50,20 +50,16 @@ const Projects = () => {
       viewport={{ once: false, amount: 0.2 }}
       className="relative py-20 bg-dark-200 overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 blur-3xl rounded-full" />
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-500/10 blur-3xl rounded-full" />
-      </div>
+      <div className="absolute inset-0 overflow-hidden"></div>
       <div className="container relative z-10 mx-auto px-6 max-w-7xl">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
-          Featured <span className="text-purple">Projects</span>
+          Recent <span className="text-purple">Projects</span>
         </h2>
 
         <p className="text-gray-400 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-          A showcase of full-stack web applications built using the MERN stack,
-          demonstrating expertise in frontend development, backend architecture,
-          authentication, database management, and deployment.
+          A collection of projects focused on solving real-world problems using
+          modern web technologies.
         </p>
 
         {/* Projects Grid */}
@@ -94,12 +90,13 @@ const Projects = () => {
             className="
               inline-flex items-center gap-2
               px-6 py-3
-              border border-purple
+              border border-white/10
               rounded-lg
               font-medium
-              text-purple
-              hover:bg-purple/10
-             hover:border-purple/60
+              text-white
+              hover:border-white/20
+              hover:bg-white/5
+             
                 hover:shadow-[0_0_20px_rgba(139,92,246,0.25)]
               transition-all duration-300
             "
