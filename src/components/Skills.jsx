@@ -88,7 +88,7 @@ const Skills = () => {
       <div className="absolute inset-0 overflow-hidden"></div>
       <div className="container mx-auto px-6 relative z-10">
         {/* Heading */}
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Skills
         </h2>
 
@@ -115,7 +115,6 @@ const Skills = () => {
                 border border-white/10
                 rounded-2xl
                 p-6
-                shadow-lg
                 hover:border-purple/40
                 transition-all duration-300
                 cursor-default
@@ -147,9 +146,6 @@ const Skills = () => {
                       bg-dark-400/40
                       border border-white/10
                       rounded-md
-                      hover:bg-purple/20
-                      hover:text-white
-                      transition-all duration-200
                     "
                   >
                     {tag}

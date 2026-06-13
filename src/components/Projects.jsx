@@ -53,7 +53,7 @@ const Projects = () => {
       <div className="absolute inset-0 overflow-hidden"></div>
       <div className="container relative z-10 mx-auto px-6 max-w-7xl">
         {/* Heading */}
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Recent <span className="text-purple">Projects</span>
         </h2>
 

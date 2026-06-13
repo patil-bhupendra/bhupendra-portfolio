@@ -37,7 +37,7 @@ const About = () => {
     >
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-20">
-        <h2 className="text-3xl font-bold text-center mb-4">About</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">About</h2>
 
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
           MCA graduate and Full Stack Developer focused on building scalable,
