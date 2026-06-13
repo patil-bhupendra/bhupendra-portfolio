@@ -119,7 +119,7 @@ const Navbar = () => {
             className="fixed w-full z-50 px-6 py-3"
           >
             <nav
-              className={`container mx-auto flex items-center justify-between transition-all duration-300 rounded-2xl ${
+              className={`container mx-auto px-6 flex items-center justify-between transition-all duration-300 rounded-2xl ${
                 scrolled
                   ? "bg-black/30 backdrop-blur-xl border border-white/10 shadow-xl"
                   : "bg-transparent"
@@ -141,7 +141,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="leading-tight">
-                    <h3 className="text-white font-semibold text-base">
+                    <h3 className="text-white/90 font-medium text-sm">
                       Bhupendra Patil
                     </h3>
 
@@ -171,7 +171,7 @@ const Navbar = () => {
                         {sec.charAt(0).toUpperCase() + sec.slice(1)}
                       </span>
                       <span
-                        className={`absolute left-0 -bottom-1 h-0.5 bg-purple transition-all ${
+                        className={`absolute left-0 -bottom-1 h-[1px] bg-purple/80 transition-all ${
                           activeSection === sec
                             ? "w-full"
                             : "w-0 group-hover:w-full"
@@ -190,8 +190,8 @@ const Navbar = () => {
 inline-flex items-center gap-2
 px-5 py-2.5
 rounded-full
-bg-purple
-hover:bg-purple-700
+bg-purple/90
+hover:bg-purple
 text-white
 font-medium
 transition-all duration-300
