@@ -17,7 +17,7 @@ transition-all duration-300
 cursor-pointer
 hover:-translate-y-2
 hover:border-purple/40
-hover:shadow-[0_0_30px_rgba(139,92,246,0.25)]
+
 "
     >
       {/* Image */}
@@ -26,7 +26,7 @@ hover:shadow-[0_0_30px_rgba(139,92,246,0.25)]
           src={image}
           alt={title}
           loading="lazy"
-          className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -50,9 +50,7 @@ text-xs px-3 py-1 rounded-full
 bg-dark-400/40
 text-gray-300
 border border-white/10
-hover:bg-purple/20
-hover:text-white
-transition-all duration-200"
+"
             >
               {item}
             </span>
