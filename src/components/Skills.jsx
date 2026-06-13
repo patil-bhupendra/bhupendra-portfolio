@@ -117,7 +117,6 @@ const Skills = () => {
                 p-6
                 shadow-lg
                 hover:border-purple/40
-                hover:border-purple/40
                 transition-all duration-300
                 cursor-default
               "
