@@ -13,15 +13,12 @@ const Contact = () => {
       viewport={{ once: false, amount: 0.2 }}
       className="relative py-20 bg-dark-200 overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 blur-3xl rounded-full" />
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-500/10 blur-3xl rounded-full" />
-      </div>
+      <div className="absolute inset-0 overflow-hidden"></div>
 
       <div className="container relative z-10 mx-auto px-6">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
-          Let's <span className="text-purple">Connect</span>
+          Let's <span className="text-purple">Work Together</span>
         </h2>
 
         <p className="text-gray-400 text-center max-w-3xl mx-auto mb-16">
@@ -32,7 +29,15 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="backdrop-blur-md bg-dark-300/60 border border-white/10 rounded-2xl p-8">
+          <div
+            className="backdrop-blur-md
+bg-dark-300/60
+border border-white/10
+rounded-2xl
+p-8
+hover:border-purple/40
+transition-all duration-300"
+          >
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label htmlFor="name" className="block text-gray-300 mb-2">
@@ -44,14 +49,14 @@ const Contact = () => {
                   name="name"
                   placeholder="Enter your name"
                   className="
-                    w-full px-4 py-3
-                    bg-dark-300
-                    border border-dark-400
-                    rounded-lg
-                    outline-none
-                    focus:border-purple
-                    transition
-                  "
+w-full px-4 py-3
+bg-dark-400/40
+border border-white/10
+rounded-lg
+outline-none
+focus:border-purple/60
+transition-all
+"
                 />
               </div>
 
@@ -66,13 +71,12 @@ const Contact = () => {
                   placeholder="Enter your email"
                   className="
 w-full px-4 py-3
-bg-dark-300/60
-backdrop-blur-md
+bg-dark-400/40
 border border-white/10
 rounded-lg
 outline-none
-focus:border-purple
-transition
+focus:border-purple/60
+transition-all
 "
                 />
               </div>
@@ -86,16 +90,16 @@ transition
                   name="message"
                   placeholder="Write your message..."
                   className="
-                    w-full h-40
-                    px-4 py-3
-                    bg-dark-300
-                    border border-dark-400
-                    rounded-lg
-                    outline-none
-                    resize-none
-                    focus:border-purple
-                    transition
-                  "
+w-full h-40
+px-4 py-3
+bg-dark-400/40
+border border-white/10
+rounded-lg
+outline-none
+resize-none
+focus:border-purple/60
+transition-all
+"
                 />
               </div>
 
@@ -142,8 +146,29 @@ rounded-2xl"
             </div>
 
             {/* Location */}
-            <div className="flex items-start">
-              <div className="text-2xl text-purple mr-4">
+            <div
+              className="
+flex items-start gap-4
+p-4
+rounded-xl
+border border-white/10
+bg-dark-300/40
+hover:border-purple/30
+transition-all duration-300
+"
+            >
+              <div
+                className="
+w-12 h-12
+rounded-full
+bg-dark-300/60
+border border-white/10
+flex items-center justify-center
+hover:border-purple/40
+hover:bg-purple/10
+transition-all duration-300
+"
+              >
                 <FaMapMarkerAlt />
               </div>
 
@@ -154,8 +179,29 @@ rounded-2xl"
             </div>
 
             {/* Email */}
-            <div className="flex items-start">
-              <div className="text-2xl text-purple mr-4">
+            <div
+              className="
+flex items-start gap-4
+p-4
+rounded-xl
+border border-white/10
+bg-dark-300/40
+hover:border-purple/30
+transition-all duration-300
+"
+            >
+              <div
+                className="
+w-12 h-12
+rounded-full
+bg-dark-300/60
+border border-white/10
+flex items-center justify-center
+hover:border-purple/40
+hover:bg-purple/10
+transition-all duration-300
+"
+              >
                 <FaEnvelope />
               </div>
 
@@ -166,8 +212,29 @@ rounded-2xl"
             </div>
 
             {/* Phone */}
-            <div className="flex items-start">
-              <div className="text-2xl text-purple mr-4">
+            <div
+              className="
+flex items-start gap-4
+p-4
+rounded-xl
+border border-white/10
+bg-dark-300/40
+hover:border-purple/30
+transition-all duration-300
+"
+            >
+              <div
+                className="
+w-12 h-12
+rounded-full
+bg-dark-300/60
+border border-white/10
+flex items-center justify-center
+hover:border-purple/40
+hover:bg-purple/10
+transition-all duration-300
+"
+              >
                 <FaPhone />
               </div>
 
@@ -187,13 +254,15 @@ rounded-2xl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    w-12 h-12
-                    rounded-full
-                    bg-dark-300
-                    flex items-center justify-center
-                    hover:bg-purple
-                    transition-all duration-300
-                  "
+w-12 h-12
+rounded-full
+bg-dark-300/60
+border border-white/10
+flex items-center justify-center
+hover:border-purple/40
+hover:bg-purple/10
+transition-all duration-300
+"
                 >
                   <FaGithub />
                 </a>
@@ -203,13 +272,15 @@ rounded-2xl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    w-12 h-12
-                    rounded-full
-                    bg-dark-300
-                    flex items-center justify-center
-                    hover:bg-purple
-                    transition-all duration-300
-                  "
+w-12 h-12
+rounded-full
+bg-dark-300/60
+border border-white/10
+flex items-center justify-center
+hover:border-purple/40
+hover:bg-purple/10
+transition-all duration-300
+"
                 >
                   <FaLinkedin />
                 </a>
@@ -219,13 +290,15 @@ rounded-2xl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    w-12 h-12
-                    rounded-full
-                    bg-dark-300
-                    flex items-center justify-center
-                    hover:bg-purple
-                    transition-all duration-300
-                  "
+w-12 h-12
+rounded-full
+bg-dark-300/60
+border border-white/10
+flex items-center justify-center
+hover:border-purple/40
+hover:bg-purple/10
+transition-all duration-300
+"
                 >
                   <FaXTwitter />
                 </a>
