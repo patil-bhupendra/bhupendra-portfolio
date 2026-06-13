@@ -277,7 +277,7 @@ shadow-lg shadow-purple/30
                     href={resumePDF}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple hover:bg-purple-700 text-white font-medium transition-all duration-300 shadow-lg shadow-purple/30 "
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple hover:bg-purple-700 text-white font-medium transition-all duration-300 border border-purple/30 bg-purple "
                   >
                     View Resume
                   </a>
