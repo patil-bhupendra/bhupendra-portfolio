@@ -52,7 +52,7 @@ const Navbar = () => {
       setScrolled(current > 40);
 
       if (current > lastScrollY.current && current > 80) {
-        setVisible(false);
+        setVisible(true);
       } else {
         setVisible(true);
       }
@@ -119,7 +119,7 @@ const Navbar = () => {
             className="fixed w-full z-50 px-6 py-3"
           >
             <nav
-              className={`container mx-auto px-6 flex items-center justify-between transition-all duration-300 rounded-2xl ${
+              className={`container max-w-6xl mx-auto flex items-center justify-between transition-all duration-300 rounded-2xl ${
                 scrolled
                   ? "bg-black/30 backdrop-blur-xl border border-white/10 shadow-xl"
                   : "bg-transparent"
@@ -140,15 +140,7 @@ const Navbar = () => {
                     BP
                   </div>
 
-                  <div className="leading-tight">
-                    <h3 className="text-white/90 font-medium text-sm">
-                      Bhupendra Patil
-                    </h3>
-
-                    <p className="text-[10px] text-gray-400">
-                      Full Stack Developer
-                    </p>
-                  </div>
+                  
                 </motion.div>
               </a>
 
