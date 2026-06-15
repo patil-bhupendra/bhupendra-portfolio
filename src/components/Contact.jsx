@@ -1,9 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaGithub, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("");
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+      setStatus("success");
+      setTimeout(() => {
+        setStatus("");
+      }, 5000);
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus("error");
+      console.error("EmailJS Error:", error);
+      setTimeout(() => {
+        setStatus("");
+      }, 5000);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <motion.section
       id="contact"
@@ -38,7 +92,7 @@ p-8
 hover:border-purple/40
 transition-all duration-300"
           >
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-gray-300 mb-2">
                   Your Name
@@ -47,6 +101,9 @@ transition-all duration-300"
                 <input
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your name"
                   className="
 w-full px-4 py-3
@@ -59,7 +116,6 @@ transition-all
 "
                 />
               </div>
-
               <div>
                 <label htmlFor="email" className="block text-gray-300 mb-2">
                   Email Address
@@ -68,6 +124,9 @@ transition-all
                 <input
                   type="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your email"
                   className="
 w-full px-4 py-3
@@ -80,7 +139,6 @@ transition-all
 "
                 />
               </div>
-
               <div>
                 <label htmlFor="message" className="block text-gray-300 mb-2">
                   Your Message
@@ -88,6 +146,9 @@ transition-all
 
                 <textarea
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   placeholder="Write your message..."
                   className="
 w-full h-40
@@ -102,21 +163,32 @@ transition-all
 "
                 />
               </div>
-
               <button
                 type="submit"
-                className="
-                  w-full
-                  px-6 py-3
-                  bg-purple
-                  rounded-lg
-                  font-medium
-                  hover:bg-purple/80
-                  transition-all duration-300
-                "
+                disabled={loading}
+                className={`
+  w-full px-6 py-3 rounded-lg font-medium transition-all duration-300
+  
+  ${
+    loading
+      ? "bg-purple/70 cursor-not-allowed"
+      : "bg-purple hover:bg-purple/80 cursor-pointer"
+  }
+`}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
+
+              {status === "success" && (
+                <p className="text-green-400 text-sm">
+                  Message sent successfully!
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-red-400 text-sm">
+                  Failed to send message. Please try again.
+                </p>
+              )}
             </form>
           </div>
 
@@ -207,7 +279,12 @@ transition-all duration-300
 
               <div>
                 <h3 className="text-lg font-semibold mb-1">Email</h3>
-                <p className="text-gray-400">bhupendrarajput1232@gmail.com</p>
+                <a
+                  href="mailto:bhupendrarajput1232@gmail.com"
+                  className="text-gray-400 hover:text-purple"
+                >
+                  bhupendrarajput1232@gmail.com
+                </a>
               </div>
             </div>
 
@@ -240,7 +317,12 @@ transition-all duration-300
 
               <div>
                 <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                <p className="text-gray-400">+91 8378097953</p>
+                <a
+                  href="tel:+918378097953"
+                  className="text-gray-400 hover:text-purple"
+                >
+                  +91 8378097953
+                </a>
               </div>
             </div>
 
