@@ -22,13 +22,21 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20 md:pt-0">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+          className="
+text-4xl
+md:text-5xl
+lg:text-6xl
+font-extrabold
+tracking-tight
+leading-[1.1]
+text-white
+"
         >
           I build{" "}
           <span className="text-white/80">scalable MERN applications</span>
@@ -41,7 +49,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25 }}
-          className="flex items-center justify-center gap-3 mt-10 text-lg text-gray-300"
+          className="flex flex-wrap items-center justify-center gap-3 mt-10 text-lg text-gray-300"
         >
           <span>Hello, I'm</span>
 
@@ -84,6 +92,7 @@ const Hero = () => {
           </a>
 
           {/* Secondary Button */}
+
           <a
             href={resumePDF}
             target="_blank"
