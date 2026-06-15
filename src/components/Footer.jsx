@@ -9,7 +9,6 @@ const Footer = () => {
   return (
     <footer className="relative py-14 bg-dark-300 overflow-hidden border-t border-white/10">
       {" "}
-      
       <div className="container relative z-10 mx-auto px-6">
         {" "}
         <div className="grid md:grid-cols-3 gap-10 text-gray-300">
@@ -140,8 +139,8 @@ const Footer = () => {
             className="text-center text-gray-500 text-sm"
           >
             {" "}
-            © {new Date().getFullYear()} Bhupendra Patil. Built with React,
-            Tailwind CSS, and Framer Motion.{" "}
+            © {new Date().getFullYear()} Bhupendra Patil. All rights reserved.
+            
           </motion.p>{" "}
         </div>{" "}
       </div>{" "}
