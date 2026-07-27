@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import resumePDF from "../assets/Bhupendra_Patil_Resume.pdf";
+import logo from "../assets/PortfolioLogo.png";
 
 /* Framer motion variants */
 const navVariants = {
@@ -129,18 +130,18 @@ const Navbar = () => {
               <a
                 href="#home"
                 onClick={(e) => handleSmoothScroll(e, "home")}
-                className="flex items-center gap-3 py-2 px-2 md:px-4"
+                className="flex items-center py-2 px-2 md:px-4"
               >
                 <motion.div
                   animate={{ scale: logoScale }}
                   transition={{ duration: 0.18 }}
                   className="flex items-center gap-2 select-none"
                 >
-                  <div className="w-10 h-10 rounded-full bg-purple flex items-center justify-center text-white font-bold">
-                    BP
-                  </div>
-
-                  
+                  <img
+                    src={logo}
+                    alt="Bhupendra Patil Logo"
+                    className="h-12 w-auto object-contain transition-all duration-300 hover:scale-105"
+                  />
                 </motion.div>
               </a>
 
@@ -227,9 +228,11 @@ shadow-lg shadow-purple/30
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-purple flex items-center justify-center text-white font-bold">
-                    BP
-                  </div>
+                  <img
+                    src={logo}
+                    alt="Bhupendra Patil Logo"
+                    className="h-11 w-auto object-contain"
+                  />
 
                   <div>
                     <h3 className="text-white font-semibold text-base">
